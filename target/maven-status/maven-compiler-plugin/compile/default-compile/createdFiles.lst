@@ -1,0 +1,15 @@
+com\library\App.class
+com\library\services\DatabaseService.class
+com\library\controllers\StudentDashboardController.class
+com\library\controllers\BookFormController.class
+com\library\controllers\LoginController.class
+com\library\controllers\LibrarianDashboardController.class
+com\library\models\Book.class
+com\library\models\User.class
+com\library\services\TransactionService.class
+com\library\services\BookService.class
+com\library\models\Transaction.class
+com\library\utils\SessionManager.class
+com\library\services\UserService.class
+com\library\controllers\RegisterController.class
+com\library\utils\EmailUtil.class
