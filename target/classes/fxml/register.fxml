@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controllers.RegisterController">
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="Create a New Account" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="120.0" text="Username:" />
+                  <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="120.0" text="Password:" />
+                  <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="120.0" text="Confirm Password:" />
+                  <PasswordField fx:id="confirmPasswordField" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="120.0" text="Email:" />
+                  <TextField fx:id="emailField" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="120.0" text="Full Name:" />
+                  <TextField fx:id="fullNameField" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="120.0" text="Role:" />
+                  <ComboBox fx:id="roleComboBox" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="registerButton" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="100.0" text="Register" />
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="100.0" text="Back" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <bottom>
+      <Label text="© 2023 Library Management System" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+</BorderPane>
