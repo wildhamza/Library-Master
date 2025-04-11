@@ -1,0 +1,44 @@
+@startuml Book Checkout Sequence
+
+actor Librarian
+participant "LibrarianDashboard" as dashboard
+participant "BookService" as bookService
+participant "TransactionService" as transService
+participant "UserService" as userService
+participant "Database" as db
+
+Librarian -> dashboard: Initiate Checkout
+activate dashboard
+
+dashboard -> userService: Validate User
+activate userService
+userService -> db: Check User Status
+db --> userService: User Details
+userService --> dashboard: User Valid
+deactivate userService
+
+dashboard -> bookService: Check Book Availability
+activate bookService
+bookService -> db: Query Book Status
+db --> bookService: Book Details
+bookService --> dashboard: Book Available
+deactivate bookService
+
+dashboard -> transService: Create Transaction
+activate transService
+transService -> db: Create Transaction Record
+db --> transService: Transaction Created
+transService --> dashboard: Transaction Success
+deactivate transService
+
+dashboard -> bookService: Update Book Status
+activate bookService
+bookService -> db: Update Book Quantity
+db --> bookService: Update Success
+bookService --> dashboard: Book Status Updated
+deactivate bookService
+
+dashboard --> Librarian: Checkout Complete
+deactivate dashboard
+
+@enduml 

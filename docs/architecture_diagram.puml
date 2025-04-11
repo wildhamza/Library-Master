@@ -1,0 +1,60 @@
+@startuml
+
+title Library Management System Architecture
+
+' Define styles
+skinparam backgroundColor white
+skinparam classBackgroundColor white
+skinparam classBorderColor black
+skinparam classArrowColor black
+skinparam packageBackgroundColor lightgray
+skinparam packageBorderColor black
+
+' Define packages
+package "Presentation Layer" {
+    class LibrarianDashboardController as dashboard
+    class UserManagementController as userCtrl
+    class BookManagementController as bookCtrl
+}
+
+package "Business Logic Layer" {
+    class AuthenticationService as authService
+    class BookService as bookService
+    class TransactionService as transService
+    class UserService as userService
+}
+
+package "Data Access Layer" {
+    class User as userModel
+    class Book as bookModel
+    class Transaction as transModel
+    class BaseModel as baseModel
+}
+
+package "Database Layer" {
+    database MySQL as mysql
+}
+
+' Define relationships
+dashboard --> authService
+dashboard --> bookService
+dashboard --> transService
+dashboard --> userService
+
+userCtrl --> userService
+bookCtrl --> bookService
+
+authService --> userModel
+bookService --> bookModel
+transService --> transModel
+userService --> userModel
+
+userModel --|> baseModel
+bookModel --|> baseModel
+transModel --|> baseModel
+
+userModel --> mysql
+bookModel --> mysql
+transModel --> mysql
+
+@enduml 
